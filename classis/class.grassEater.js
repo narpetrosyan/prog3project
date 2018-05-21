@@ -1,4 +1,6 @@
-class GrassEater extends LivingCreature  {
+var LivingCreature = require('./class.kendani.js');
+
+module.exports = class GrassEater extends LivingCreature  {
 
      constructor(x, y, index){
         super(x, y, index);

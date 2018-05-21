@@ -1,11 +1,12 @@
-class gishatich_horse {
-    constructor(x, y, index) {
-        this.x = x;
-        this.y = y;
-        this.index = index;
-        this.energy = 6;
+var LivingCreature = require('./class.kendani.js');
 
+module.exports = class gishatich_horse extends LivingCreature {
+
+    constructor(x, y, index) {
+        super(x, y, index);
+        this.energy = 6;
     }
+
     newcordinat() {
         this.directions_eat = [
             [this.x - 1, this.y - 2],

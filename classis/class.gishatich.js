@@ -1,12 +1,10 @@
-class gishatich {
+var LivingCreature = require('./class.kendani.js');
+module.exports = class gishatich extends LivingCreature {
     constructor(x, y, index) {
-        this.x = x;
-        this.y = y;
-        this.index = index;
+        super(x, y, index);
         this.health = 3;
         this.caunt = 0;
         this.naxkinIndex = 0;
-
     }
     newcordinat() {
         this.directions = [
@@ -20,7 +18,10 @@ class gishatich {
             [this.x + 1, this.y + 1]
         ];
     }
-
+    chooseCell(ch) {
+        this.newcordinat();
+        return super.chooseCell(ch);
+    }
     move() {
 
         var tazaVandak = random(this.yntrelvandaky(1));
@@ -95,22 +96,7 @@ class gishatich {
 
 
     }
-    yntrelvandaky(character) {
-        this.newcordinat();
-        var found = [];
 
-        for (var i in this.directions) {
-            var x = this.directions[i][0];
-            var y = this.directions[i][1];
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == character) {
-                    found.push(this.directions[i]);
 
-                }
-
-            }
-        }
-        return found;
-    }
 
 }
